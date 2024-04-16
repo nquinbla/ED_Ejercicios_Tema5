@@ -22,7 +22,7 @@ public class GUI_ValMáxVector extends JFrame {
         textFieldY = new JTextField(10);
         add(textFieldY);
 
-        button = new JButton("Calcular x^y");
+        button = new JButton("Calcular x*y");
         add(button);
 
         event e = new event();
@@ -34,8 +34,8 @@ public class GUI_ValMáxVector extends JFrame {
             int x = Integer.parseInt(textFieldX.getText());
             int y = Integer.parseInt(textFieldY.getText());
             ValMáxVector valMáxVector = new ValMáxVector();
-            int resultado = valMáxVector.calcularPotencia(x, y);
-            JOptionPane.showMessageDialog(null, "El resultado de " + x + "^" + y + " es " + resultado + ".");
+            int resultado = valMáxVector.calcularMultiplicacion(x, y);
+            JOptionPane.showMessageDialog(null, "El resultado de " + x + "*" + y + " es " + resultado + ".");
         }
     }
 
@@ -44,6 +44,6 @@ public class GUI_ValMáxVector extends JFrame {
         gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         gui.setVisible(true);
         gui.pack();
-        gui.setTitle("Cálculo de x^y");
+        gui.setTitle("Cálculo de x*y");
     }
 }
