@@ -4,40 +4,66 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 public class GUI_OrdenarAlfabeticamente extends JFrame {
-    private JTextField textFieldEntrada;
-    private JTextField textFieldSalida;
+    private JButton buttonSeleccionarEntrada;
+    private JButton buttonSeleccionarSalida;
     private JButton buttonOrdenar;
+    private JLabel labelArchivoEntrada;
+    private JLabel labelArchivoSalida;
     private OrdenarAlfabeticamente ordenarAlfabeticamente = new OrdenarAlfabeticamente();
+    private File archivoEntrada;
+    private File archivoSalida;
 
     public GUI_OrdenarAlfabeticamente() {
         setLayout(new FlowLayout());
 
-        add(new JLabel("Archivo de entrada:"));
-        textFieldEntrada = new JTextField(20);
-        add(textFieldEntrada);
+        buttonSeleccionarEntrada = new JButton("Seleccionar archivo de entrada");
+        add(buttonSeleccionarEntrada);
 
-        add(new JLabel("Archivo de salida:"));
-        textFieldSalida = new JTextField(20);
-        add(textFieldSalida);
+        labelArchivoEntrada = new JLabel("No se ha seleccionado ningún archivo de entrada");
+        add(labelArchivoEntrada);
+
+        buttonSeleccionarSalida = new JButton("Seleccionar archivo de salida");
+        add(buttonSeleccionarSalida);
+
+        labelArchivoSalida = new JLabel("No se ha seleccionado ningún archivo de salida");
+        add(labelArchivoSalida);
 
         buttonOrdenar = new JButton("Ordenar");
         add(buttonOrdenar);
 
         event e = new event();
+        buttonSeleccionarEntrada.addActionListener(e);
+        buttonSeleccionarSalida.addActionListener(e);
         buttonOrdenar.addActionListener(e);
     }
 
     public class event implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String archivoEntrada = textFieldEntrada.getText();
-            String archivoSalida = textFieldSalida.getText();
-            try {
-                ordenarAlfabeticamente.ordenarArchivo(archivoEntrada, archivoSalida);
-                JOptionPane.showMessageDialog(null, "Archivo ordenado con éxito.");
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "Error al ordenar el archivo: " + ex.getMessage());
+            JFileChooser fileChooser = new JFileChooser();
+            if (e.getSource() == buttonSeleccionarEntrada) {
+                if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                    archivoEntrada = fileChooser.getSelectedFile();
+                    labelArchivoEntrada.setText("Archivo de entrada seleccionado: " + archivoEntrada.getPath());
+                }
+            } else if (e.getSource() == buttonSeleccionarSalida) {
+                if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                    archivoSalida = fileChooser.getSelectedFile();
+                    labelArchivoSalida.setText("Archivo de salida seleccionado: " + archivoSalida.getPath());
+                }
+            } else if (e.getSource() == buttonOrdenar) {
+                if (archivoEntrada != null && archivoSalida != null) {
+                    try {
+                        ordenarAlfabeticamente.ordenarArchivo(archivoEntrada.getPath(), archivoSalida.getPath());
+                        JOptionPane.showMessageDialog(null, "Archivo ordenado con éxito.");
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, "Error al ordenar el archivo: " + ex.getMessage());
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Por favor, selecciona los archivos de entrada y salida.");
+                }
             }
         }
     }
