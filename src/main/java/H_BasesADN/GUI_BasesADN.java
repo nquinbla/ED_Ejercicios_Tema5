@@ -4,13 +4,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GUI_BasesADN extends JFrame {
     private JButton buttonGenerar;
     private JButton buttonContar;
-    private JLabel labelADN;
+    private JList<String> listADN;
+    private DefaultListModel<String> listModel;
     private BasesADN basesADN = new BasesADN();
-    private String adn;
+    private List<String> adnList = new ArrayList<>();
 
     public GUI_BasesADN() {
         setLayout(new FlowLayout());
@@ -18,8 +21,10 @@ public class GUI_BasesADN extends JFrame {
         buttonGenerar = new JButton("Generar ADN");
         add(buttonGenerar);
 
-        labelADN = new JLabel();
-        add(labelADN);
+        listModel = new DefaultListModel<>();
+        listADN = new JList<>(listModel);
+        JScrollPane scrollPane = new JScrollPane(listADN);
+        add(scrollPane);
 
         buttonContar = new JButton("Contar genes");
         add(buttonContar);
@@ -32,11 +37,12 @@ public class GUI_BasesADN extends JFrame {
     public class event implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == buttonGenerar) {
-                adn = basesADN.generarADN(1000);  // Genera una cadena de ADN de longitud 1000
-                labelADN.setText("ADN generado: " + adn);
+                String adn = basesADN.generarADN(1000);  // Genera una cadena de ADN de longitud 1000
+                adnList.add(adn);
+                listModel.addElement(adn);
             } else if (e.getSource() == buttonContar) {
-                int count = basesADN.contarGenes(adn);
-                JOptionPane.showMessageDialog(null, "Número de genes en la cadena de ADN: " + count);
+                int totalGenes = adnList.stream().mapToInt(basesADN::contarGenes).sum();
+                JOptionPane.showMessageDialog(null, "Número total de genes en las cadenas de ADN: " + totalGenes);
             }
         }
     }
