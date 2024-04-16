@@ -168,4 +168,3 @@ public class Main extends JFrame {
         gui.setTitle("Main");
     }
 }
-
