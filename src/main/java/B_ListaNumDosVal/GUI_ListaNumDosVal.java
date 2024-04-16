@@ -51,7 +51,7 @@ public class GUI_ListaNumDosVal extends JFrame {
 
     public static void main(String[] args) {
         GUI_ListaNumDosVal gui = new GUI_ListaNumDosVal();
-        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         gui.setVisible(true);
         gui.pack();
         gui.setTitle("Lista de números entre dos valores");
