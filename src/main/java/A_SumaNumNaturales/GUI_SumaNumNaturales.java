@@ -1,15 +1,15 @@
-package A_FunciónRecursiva;
+package A_SumaNumNaturales;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GUI_FunciónRecursiva extends JFrame {
+public class GUI_SumaNumNaturales extends JFrame {
     private JTextField textField;
     private JButton button;
     private JLabel label;
 
-    public GUI_FunciónRecursiva() {
+    public GUI_SumaNumNaturales() {
         setLayout(new FlowLayout());
 
         label = new JLabel("Introduce un número:");
@@ -28,14 +28,14 @@ public class GUI_FunciónRecursiva extends JFrame {
     public class event implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             int num = Integer.parseInt(textField.getText());
-            FunciónRecursiva fr = new FunciónRecursiva();
+            SumaNumNaturales fr = new SumaNumNaturales();
             int suma = fr.sumaRecursiva(num);
             JOptionPane.showMessageDialog(null, "La suma de los primeros " + num + " números naturales es " + suma);
         }
     }
 
     public static void main(String[] args) {
-        GUI_FunciónRecursiva gui = new GUI_FunciónRecursiva();
+        GUI_SumaNumNaturales gui = new GUI_SumaNumNaturales();
         gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         gui.setVisible(true);
         gui.pack();

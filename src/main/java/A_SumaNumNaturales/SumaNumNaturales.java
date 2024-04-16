@@ -1,6 +1,6 @@
-package A_FunciónRecursiva;
+package A_SumaNumNaturales;
 
-public class FunciónRecursiva {
+public class SumaNumNaturales {
     public int sumaRecursiva(int n) {
         if (n <= 0) {
             return 0;
