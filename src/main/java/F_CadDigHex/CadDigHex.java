@@ -1,6 +1,6 @@
-package F_ValMáxVectCompNum;
+package F_CadDigHex;
 
-public class ValMáxVectCompNum {
+public class CadDigHex {
     public int  ValMáxVectCompNum(String hex, int length) {
         if (length == 1) {
             return Character.digit(hex.charAt(0), 16);
