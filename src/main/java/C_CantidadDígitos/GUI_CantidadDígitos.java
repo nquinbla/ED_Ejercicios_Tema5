@@ -37,7 +37,7 @@ public class GUI_CantidadDígitos extends JFrame {
 
     public static void main(String[] args) {
         GUI_CantidadDígitos gui = new GUI_CantidadDígitos();
-        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         gui.setVisible(true);
         gui.pack();
         gui.setTitle("Cantidad de dígitos");
