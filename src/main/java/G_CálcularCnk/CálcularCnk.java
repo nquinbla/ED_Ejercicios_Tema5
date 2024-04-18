@@ -1,13 +1,11 @@
 package G_CálcularCnk;
 
 public class CálcularCnk {
-    public int calcularCnk(int n, int k) {
-        if (k == 0 || k == n) {
-            return 1;
-        } else if (k > n) {
-            return 0;
-        } else {
-            return calcularCnk(n - 1, k) + calcularCnk(n - 1, k - 1);
+    public int calcular(int n, int k) {
+        int result = 1;
+        for (int i = 0; i < k; i++) {
+            result = result * (n - i) / (i + 1);
         }
+        return result;
     }
 }

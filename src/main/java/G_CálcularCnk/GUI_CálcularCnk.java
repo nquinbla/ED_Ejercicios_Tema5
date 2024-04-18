@@ -30,11 +30,15 @@ public class GUI_CálcularCnk extends JFrame {
 
     public class event implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            int n = Integer.parseInt(textFieldN.getText());
-            int k = Integer.parseInt(textFieldK.getText());
-            CálcularCnk calcularCnk = new CálcularCnk();
-            int resultado = calcularCnk.calcularCnk(n, k);
-            JOptionPane.showMessageDialog(null, "El valor de C(" + n + ", " + k + ") es " + resultado + ".");
+            try {
+                int n = Integer.parseInt(textFieldN.getText());
+                int k = Integer.parseInt(textFieldK.getText());
+                CálcularCnk calcularCNK = new CálcularCnk();
+                int resultado = calcularCNK.calcular(n, k);
+                JOptionPane.showMessageDialog(null, "El resultado de C(" + n + ", " + k + ") es " + resultado + ".");
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Por favor, introduce un número válido.");
+            }
         }
     }
 
