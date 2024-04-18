@@ -51,14 +51,14 @@ public class Main extends JFrame {
         title.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el título
         gbc.anchor = GridBagConstraints.CENTER;
         gbc.gridy = 0;
-        panel.add(title, gbc);
+        panel.add(title, BorderLayout.NORTH); // Specify the area
 
         JLabel subtitle = new JLabel("Algoritmia básica: ordenación y búsqueda");
         subtitle.setFont(new Font("Arial", Font.PLAIN, 18));
         title.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el título
         gbc.anchor = GridBagConstraints.CENTER;
         gbc.gridy = 0;
-        panel.add(title, gbc);
+        panel.add(subtitle, BorderLayout.CENTER); // Specify the area
 
         setLayout(new FlowLayout());
 
