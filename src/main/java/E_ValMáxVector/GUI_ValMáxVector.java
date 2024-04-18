@@ -31,11 +31,15 @@ public class GUI_ValMáxVector extends JFrame {
 
     public class event implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            int x = Integer.parseInt(textFieldX.getText());
-            int y = Integer.parseInt(textFieldY.getText());
-            ValMáxVector valMáxVector = new ValMáxVector();
-            int resultado = valMáxVector.calcularMultiplicacion(x, y);
-            JOptionPane.showMessageDialog(null, "El resultado de " + x + "*" + y + " es " + resultado + ".");
+            try {
+                int x = Integer.parseInt(textFieldX.getText());
+                int y = Integer.parseInt(textFieldY.getText());
+                ValMáxVector valMáxVector = new ValMáxVector();
+                int resultado = valMáxVector.calcularMultiplicacion(x, y);
+                JOptionPane.showMessageDialog(null, "El resultado de " + x + "*" + y + " es " + resultado + ".");
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Por favor, introduce un número válido.");
+            }
         }
     }
 
