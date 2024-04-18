@@ -23,6 +23,10 @@ public class Main extends JFrame {
 
         DecoPanel decoPanel = new DecoPanel();
         this.setContentPane(decoPanel);
+        decoPanel.setLayout(new GridBagLayout()); // Usar GridBagLayout
+        decoPanel.setBackground(new Color(255, 255, 255, 200)); // Blanco semi-transparente
+        decoPanel.setOpaque(false); // Hacer que panelPrincipal sea
+        decoPanel.setPreferredSize(new Dimension(getWidth(), getHeight())); // Establecer el tamaño del panel igual al del marco principal
 
         // Crear un panel para los botones con FlowLayout
         JPanel buttonPanel = new JPanel(new FlowLayout());
@@ -44,7 +48,7 @@ public class Main extends JFrame {
         setLayout(new FlowLayout());
 
         // Ajustar el tamaño de la ventana
-        this.setSize(500, 500);
+        this.setSize(1000, 600);
 
         buttonSumaNumNaturales = new JButton("Suma de números naturales");
         add(buttonSumaNumNaturales);
