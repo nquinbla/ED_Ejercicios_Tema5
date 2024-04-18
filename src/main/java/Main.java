@@ -34,13 +34,13 @@ public class Main extends JFrame {
         titlesPanel.setOpaque(false);
 
         // Crear los títulos y agregarlos al panel de títulos
-        JLabel title = new JLabel("Ejercicios Unidad 5");
-        title.setFont(new Font("Arial", Font.BOLD, 24));
+        JLabel title = new JLabel("<html><font color='grey'>Ejercicios.</font><font color='grey'>de la.</font><font color='grey'>Unidad.</font><font color='blue'>5.</font></html>");
+        title.setFont(new Font("Arial", Font.BOLD, 124));
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
         titlesPanel.add(title);
 
         JLabel subtitle = new JLabel("Algoritmia básica: ordenación y búsqueda");
-        subtitle.setFont(new Font("Arial", Font.PLAIN, 18));
+        subtitle.setFont(new Font("Arial", Font.ITALIC, 44));
         subtitle.setAlignmentX(Component.CENTER_ALIGNMENT);
         titlesPanel.add(subtitle);
 
@@ -61,7 +61,59 @@ public class Main extends JFrame {
         buttonsPanel.add(buttonSumaNumNaturales);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
-        // ... crear más botones ...
+        buttonListaNumDosVal = new JButton("Lista de números entre dos valores");
+        buttonListaNumDosVal.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonsPanel.add(buttonListaNumDosVal);
+        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+
+        buttonCantidadDigitos = new JButton("Cantidad de dígitos");
+        buttonCantidadDigitos.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonsPanel.add(buttonCantidadDigitos);
+        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+
+        buttonCalculoxy = new JButton("Cálculo de x^y");
+        buttonCalculoxy.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonsPanel.add(buttonCalculoxy);
+        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+
+        buttonCadDigHex = new JButton("Conversión de hexadecimal a decimal");
+        buttonCadDigHex.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonsPanel.add(buttonCadDigHex);
+        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+
+        buttonValMaxVector = new JButton("Cálculo de x*y");
+        buttonValMaxVector.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonsPanel.add(buttonValMaxVector);
+        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+
+        buttonBasesADN = new JButton("Generación y conteo de genes en ADN");
+        buttonBasesADN.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonsPanel.add(buttonBasesADN);
+        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+
+        buttonOrdenarAlfabeticamente = new JButton("Ordenar archivo alfabéticamente");
+        buttonOrdenarAlfabeticamente.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonsPanel.add(buttonOrdenarAlfabeticamente);
+        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+
+        buttonBusquedaPalabra = new JButton("Búsqueda de palabra en archivo");
+        buttonBusquedaPalabra.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonsPanel.add(buttonBusquedaPalabra);
+        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+
+        buttonBusquedaBinaria = new JButton("Búsqueda binaria en archivo");
+        buttonBusquedaBinaria.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonsPanel.add(buttonBusquedaBinaria);
+        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+
+        buttonFechas = new JButton("Gestión de fechas");
+        buttonFechas.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonsPanel.add(buttonFechas);
+        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+
+
+
+
 
         gbc.gridx = 0;
         gbc.gridy = 1;
@@ -71,7 +123,16 @@ public class Main extends JFrame {
 
         event e = new event();
         buttonSumaNumNaturales.addActionListener(e);
-        // ... agregar más listeners ...
+        buttonListaNumDosVal.addActionListener(e);
+        buttonCantidadDigitos.addActionListener(e);
+        buttonCalculoxy.addActionListener(e);
+        buttonCadDigHex.addActionListener(e);
+        buttonValMaxVector.addActionListener(e);
+        buttonBasesADN.addActionListener(e);
+        buttonOrdenarAlfabeticamente.addActionListener(e);
+        buttonBusquedaPalabra.addActionListener(e);
+        buttonBusquedaBinaria.addActionListener(e);
+        buttonFechas.addActionListener(e);
     }
 
     public class event implements ActionListener {
