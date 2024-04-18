@@ -26,34 +26,40 @@ public class Main extends JFrame {
         setSize(1000, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        // Crear un panel principal con BorderLayout
-        JPanel mainPanel = new JPanel(new BorderLayout());
-        this.setContentPane(mainPanel);
+        JPanel panel = new DecoPanel();
+        this.setContentPane(panel);
+        panel.setLayout(new BorderLayout());
+        panel.setBackground(new Color(255, 255, 255, 200)); // Blanco semi-transparente
+        panel.setOpaque(false); // Hacer que panelPrincipal sea
+        panel.setPreferredSize(new Dimension(getWidth(), getHeight())); // Establecer el tamaño del panel igual al del marco principal
 
-        DecoPanel decoPanel = new DecoPanel();
-        this.setContentPane(decoPanel);
-        decoPanel.setLayout(new BorderLayout());
-        decoPanel.setBackground(new Color(255, 255, 255, 200)); // Blanco semi-transparente
-        decoPanel.setOpaque(false); // Hacer que panelPrincipal sea
-        decoPanel.setPreferredSize(new Dimension(getWidth(), getHeight())); // Establecer el tamaño del panel igual al del marco principal
+        // Configurar restricciones para el diseño de cuadrícula
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.weightx = 1.0; // Dar a todos los componentes el mismo espacio horizontal
+        gbc.insets = new Insets(5, 5, 5, 5); // Margen entre componentes
+        gbc.anchor = GridBagConstraints.CENTER; // Centrar los componentes en su celda
 
-        // Crear un panel para los botones con FlowLayout
-        JPanel buttonPanel = new JPanel(new FlowLayout());
-        decoPanel.add(buttonPanel, BorderLayout.CENTER);
-
-        // Crear un panel para los títulos con BoxLayout
+        // Crear un panel para los títulos y subtítulos
         JPanel titlePanel = new JPanel();
         titlePanel.setLayout(new BoxLayout(titlePanel, BoxLayout.Y_AXIS));
-        mainPanel.add(titlePanel, BorderLayout.NORTH);
+        titlePanel.setOpaque(false); // Hacer que el panel sea transparente
 
         // Crear los títulos y agregarlos al panel de títulos
         JLabel title = new JLabel("Ejercicios Unidad 5");
         title.setFont(new Font("Arial", Font.BOLD, 24));
-        titlePanel.add(title);
+        title.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el título
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.gridy = 0;
+        panel.add(title, gbc);
 
         JLabel subtitle = new JLabel("Algoritmia básica: ordenación y búsqueda");
         subtitle.setFont(new Font("Arial", Font.PLAIN, 18));
-        titlePanel.add(subtitle);
+        title.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el título
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.gridy = 0;
+        panel.add(title, gbc);
+
         setLayout(new FlowLayout());
 
         buttonSumaNumNaturales = new JButton("Suma de números naturales");
