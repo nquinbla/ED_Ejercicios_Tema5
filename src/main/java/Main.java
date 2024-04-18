@@ -19,7 +19,7 @@ public class Main extends JFrame {
     public Main() {
         // Configurar el marco principal
         setTitle("Ejericios Unidad 5");
-        setSize(1000, 760);
+        setSize(1000, 700);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         JPanel panel = new DecoPanel();
@@ -71,56 +71,77 @@ public class Main extends JFrame {
         // Crear los botones y agregarlos al panel de botones
         buttonSumaNumNaturales = new JButton("Suma de naturales");
         buttonSumaNumNaturales.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonSumaNumNaturales.setPreferredSize(new Dimension(200, 50)); // Ajusta estos valores a tu gusto
         buttonsPanel.add(buttonSumaNumNaturales);
-        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+        buttonsPanel.add(Box.createRigidArea(new Dimension(20, 10)));
 
         buttonListaNumDosVal = new JButton("Lista de números");
         buttonListaNumDosVal.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonsPanel.add(buttonListaNumDosVal);
+        buttonListaNumDosVal.setPreferredSize(new Dimension(200, 50)); // Ajusta estos valores a tu gusto
         buttonsPanel.add(buttonListaNumDosVal);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
         buttonCantidadDigitos = new JButton("Cantidad de dígitos");
         buttonCantidadDigitos.setAlignmentX(Component.CENTER_ALIGNMENT);
         buttonsPanel.add(buttonCantidadDigitos);
+        buttonCantidadDigitos.setPreferredSize(new Dimension(200, 50)); // Ajusta estos valores a tu gusto
+        buttonsPanel.add(buttonCantidadDigitos);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
         buttonCalculoxy = new JButton("Cálculo de x^y");
         buttonCalculoxy.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonsPanel.add(buttonCalculoxy);
+        buttonCalculoxy.setPreferredSize(new Dimension(200, 50)); // Ajusta estos valores a tu gusto
         buttonsPanel.add(buttonCalculoxy);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
         buttonCadDigHex = new JButton("Hex a decimal");
         buttonCadDigHex.setAlignmentX(Component.CENTER_ALIGNMENT);
         buttonsPanel.add(buttonCadDigHex);
+        buttonCadDigHex.setPreferredSize(new Dimension(200, 50)); // Ajusta estos valores a tu gusto
+        buttonsPanel.add(buttonCadDigHex);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
         buttonValMaxVector = new JButton("Cálculo de x*y");
         buttonValMaxVector.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonsPanel.add(buttonValMaxVector);
+        buttonValMaxVector.setPreferredSize(new Dimension(200, 50)); // Ajusta estos valores a tu gusto
         buttonsPanel.add(buttonValMaxVector);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
         buttonBasesADN = new JButton("Genes en ADN");
         buttonBasesADN.setAlignmentX(Component.CENTER_ALIGNMENT);
         buttonsPanel.add(buttonBasesADN);
+        buttonBasesADN.setPreferredSize(new Dimension(200, 50)); // Ajusta estos valores a tu gusto
+        buttonsPanel.add(buttonBasesADN);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
         buttonOrdenarAlfabeticamente = new JButton("Ordenar alfabéticamente");
         buttonOrdenarAlfabeticamente.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonsPanel.add(buttonOrdenarAlfabeticamente);
+        buttonOrdenarAlfabeticamente.setPreferredSize(new Dimension(200, 50)); // Ajusta estos valores a tu gusto
         buttonsPanel.add(buttonOrdenarAlfabeticamente);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
         buttonBusquedaPalabra = new JButton("Búsqueda de palabra");
         buttonBusquedaPalabra.setAlignmentX(Component.CENTER_ALIGNMENT);
         buttonsPanel.add(buttonBusquedaPalabra);
+        buttonBusquedaPalabra.setPreferredSize(new Dimension(200, 50)); // Ajusta estos valores a tu gusto
+        buttonsPanel.add(buttonBusquedaPalabra);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
         buttonBusquedaBinaria = new JButton("Búsqueda binaria");
         buttonBusquedaBinaria.setAlignmentX(Component.CENTER_ALIGNMENT);
         buttonsPanel.add(buttonBusquedaBinaria);
+        buttonBusquedaBinaria.setPreferredSize(new Dimension(200, 50)); // Ajusta estos valores a tu gusto
+        buttonsPanel.add(buttonBusquedaBinaria);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
         buttonFechas = new JButton("Gestión de fechas");
         buttonFechas.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonsPanel.add(buttonFechas);
+        buttonFechas.setPreferredSize(new Dimension(200, 50)); // Ajusta estos valores a tu gusto
         buttonsPanel.add(buttonFechas);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
