@@ -1,5 +1,5 @@
 # ESTRUCTURA DE DATOS: EJERCICIOS UNIDAD 5
-Ejercicios de la unidad 5 de Nerea Quintanilla Blanco
+Ejercicios de la unidad 5 de Nerea Quintanilla Blanco, AL EJECUTAR ABRIR EN VENTANA GRANDE Y VOLVER A PONERLA PEQUEÑA
 LINK -> https://github.com/nquinbla/ED_Ejercicios_Tema5.git
 
 ### [EJ.1] (10 minutos) 
