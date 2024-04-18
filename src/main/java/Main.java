@@ -31,12 +31,13 @@ public class Main extends JFrame {
         panel.setLayout(new GridBagLayout()); // Cambiar a GridBagLayout
         panel.setBackground(new Color(255, 255, 255, 200)); // Blanco semi-transparente
         panel.setOpaque(false); // Hacer que panelPrincipal sea
-        panel.setPreferredSize(new Dimension(getWidth(), getHeight())); // Establecer el tamaño del panel
+        panel.setPreferredSize(new Dimension(getWidth(), getHeight()));
 
         // Configurar restricciones para el diseño de cuadrícula
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.NONE;
         gbc.weightx = 1.0; // Dar a todos los componentes el mismo espacio horizontal
+        gbc.weighty = 1.0; // Dar a todos los componentes el mismo espacio vertical
         gbc.insets = new Insets(5, 5, 5, 5); // Margen entre componentes
         gbc.anchor = GridBagConstraints.CENTER; // Centrar los componentes en su celda
 
