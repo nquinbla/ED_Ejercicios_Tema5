@@ -33,6 +33,11 @@ public class Main extends JFrame {
         JPanel titlePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         titlePanel.setOpaque(false); // Hacer que titlePanel sea transparente
 
+        // Crear un nuevo panel para los títulos con BoxLayout en el eje Y
+        JPanel titlesPanel = new JPanel();
+        titlesPanel.setLayout(new BoxLayout(titlesPanel, BoxLayout.Y_AXIS));
+        titlesPanel.setOpaque(false); // Hacer que titlesPanel sea transparente
+
         // Crear los títulos y agregarlos al panel de títulos
         JLabel title = new JLabel("Ejercicios Unidad 5");
         title.setFont(new Font("Arial", Font.BOLD, 24));
@@ -41,6 +46,9 @@ public class Main extends JFrame {
         JLabel subtitle = new JLabel("Algoritmia básica: ordenación y búsqueda");
         subtitle.setFont(new Font("Arial", Font.PLAIN, 18));
         titlePanel.add(subtitle);
+
+        titlePanel.add(titlesPanel);
+
         // Agregar el panel de títulos al panel principal
         panel.add(Box.createVerticalGlue()); // Agregar espacio flexible antes del panel de títulos
         panel.add(titlePanel);
