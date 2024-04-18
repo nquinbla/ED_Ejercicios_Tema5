@@ -4,18 +4,15 @@ import java.awt.*;
 // no es coña profe que esto es lo que más he tardado en hacer, me aparecían errores y he aprenido a poner imagenes
 public class DecoPanel extends JPanel {
     private Image imagen1;
-    private Image imagen2;
 
 
     public DecoPanel() {
         // Cargar la imagen
-        ImageIcon icono1 = new ImageIcon("src/main/resources/image-removebg-preview (3).png");
-        imagen1 = icono1.getImage();
-        ImageIcon icono2 = new ImageIcon("src/main/resources/logoUAX-removebg-preview.png");
+        ImageIcon icono1 = new ImageIcon("src/main/resources/logoUAX-removebg-preview.png");
         // Escalar la imagen
-        int newWidth = icono2.getIconWidth() / 3; // Ajusta estos valores a tu gusto
-        int newHeight = icono2.getIconHeight() / 3; // Ajusta estos valores a tu gusto
-        imagen2 = icono2.getImage().getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+        int newWidth = icono1.getIconWidth() / 3; // Ajusta estos valores a tu gusto
+        int newHeight = icono1.getIconHeight() / 3; // Ajusta estos valores a tu gusto
+        imagen1= icono1.getImage().getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
 
     }
     public void paintComponent(Graphics g) {
@@ -59,11 +56,6 @@ public class DecoPanel extends JPanel {
         int x = getWidth() / 2 - imagen1.getWidth(null) / 2; // Centrar la imagen en el eje x
         int y = getHeight() / 2 - imagen1.getHeight(null) / 2; // Centrar la imagen en el eje y
         g2d.drawImage(imagen1, x, y, null);
-
-        // Dibujar la segunda imagen en la esquina inferior izquierda
-        int x2 = 0; // Esquina superior izquierda
-        int y2 = 200;
-        g2d.drawImage(imagen2, x2, y2, null);
 
     }
 }
