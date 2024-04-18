@@ -34,12 +34,16 @@ public class Main extends JFrame {
         titlesPanel.setOpaque(false);
 
         // Crear los títulos y agregarlos al panel de títulos
+        // Crear los títulos y agregarlos al panel de títulos
         JLabel title = new JLabel("<html><font color='grey'>U</font><font color='grey'>A</font><font color='blue'>X</font></html>");
         title.setFont(new Font("Arial", Font.BOLD, 105));
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
-        titlesPanel.add(Box.createHorizontalGlue()); // Agregar espacio flexible antes del título
-        titlesPanel.add(title);
-        titlesPanel.add(Box.createHorizontalGlue()); // Agregar espacio flexible después del título
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 2; // Ocupa dos columnas
+        gbc.anchor = GridBagConstraints.CENTER; // Centrar el título horizontalmente
+        panel.add(title, gbc); // Agregar al panel con las restricciones de GridBagLayout
+
 
         JLabel subtitle1 = new JLabel("Ejercicios de la Unidad 5");
         subtitle1.setFont(new Font("Arial", Font.BOLD, 28));
@@ -50,7 +54,6 @@ public class Main extends JFrame {
         JLabel subtitle2 = new JLabel("Algoritmia básica: ordenación y búsqueda");
         subtitle2.setFont(new Font("Arial", Font.BOLD, 34));
         subtitle2.setAlignmentX(Component.CENTER_ALIGNMENT);
-// Aumentar la altura preferida
         subtitle2.setPreferredSize(new Dimension(1000, subtitle2.getPreferredSize().height + 10));
         titlesPanel.add(subtitle2);
 
