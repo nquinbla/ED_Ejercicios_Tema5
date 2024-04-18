@@ -31,11 +31,15 @@ public class GUI_Cálculoxy extends JFrame {
 
     public class event implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            int x = Integer.parseInt(textFieldX.getText());
-            int y = Integer.parseInt(textFieldY.getText());
-            Cálculoxy calculoxy = new Cálculoxy();
-            int resultado = calculoxy.calcularPotencia(x, y);
-            JOptionPane.showMessageDialog(null, "El resultado de " + x + "^" + y + " es " + resultado + ".");
+            try {
+                double x = Double.parseDouble(textFieldX.getText());
+                double y = Double.parseDouble(textFieldY.getText());
+                Cálculoxy cálculo = new Cálculoxy();
+                double resultado = cálculo.calcularPotencia((int) x, (int) y);
+                JOptionPane.showMessageDialog(null, "El resultado de la operación es " + resultado);
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Por favor, introduce un número válido.");
+            }
         }
     }
 
