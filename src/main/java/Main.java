@@ -56,12 +56,12 @@ public class Main extends JFrame {
         buttonsPanel.setOpaque(false);
 
         // Crear los botones y agregarlos al panel de botones
-        buttonSumaNumNaturales = new JButton("Suma de números naturales");
+        buttonSumaNumNaturales = new JButton("Suma de naturales");
         buttonSumaNumNaturales.setAlignmentX(Component.CENTER_ALIGNMENT);
         buttonsPanel.add(buttonSumaNumNaturales);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
-        buttonListaNumDosVal = new JButton("Lista de números entre dos valores");
+        buttonListaNumDosVal = new JButton("Lista de números");
         buttonListaNumDosVal.setAlignmentX(Component.CENTER_ALIGNMENT);
         buttonsPanel.add(buttonListaNumDosVal);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
@@ -76,7 +76,7 @@ public class Main extends JFrame {
         buttonsPanel.add(buttonCalculoxy);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
-        buttonCadDigHex = new JButton("Conversión de hexadecimal a decimal");
+        buttonCadDigHex = new JButton("Hex a decimal");
         buttonCadDigHex.setAlignmentX(Component.CENTER_ALIGNMENT);
         buttonsPanel.add(buttonCadDigHex);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
@@ -86,22 +86,22 @@ public class Main extends JFrame {
         buttonsPanel.add(buttonValMaxVector);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
-        buttonBasesADN = new JButton("Generación y conteo de genes en ADN");
+        buttonBasesADN = new JButton("Genes en ADN");
         buttonBasesADN.setAlignmentX(Component.CENTER_ALIGNMENT);
         buttonsPanel.add(buttonBasesADN);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
-        buttonOrdenarAlfabeticamente = new JButton("Ordenar archivo alfabéticamente");
+        buttonOrdenarAlfabeticamente = new JButton("Ordenar alfabéticamente");
         buttonOrdenarAlfabeticamente.setAlignmentX(Component.CENTER_ALIGNMENT);
         buttonsPanel.add(buttonOrdenarAlfabeticamente);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
-        buttonBusquedaPalabra = new JButton("Búsqueda de palabra en archivo");
+        buttonBusquedaPalabra = new JButton("Búsqueda de palabra");
         buttonBusquedaPalabra.setAlignmentX(Component.CENTER_ALIGNMENT);
         buttonsPanel.add(buttonBusquedaPalabra);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
-        buttonBusquedaBinaria = new JButton("Búsqueda binaria en archivo");
+        buttonBusquedaBinaria = new JButton("Búsqueda binaria");
         buttonBusquedaBinaria.setAlignmentX(Component.CENTER_ALIGNMENT);
         buttonsPanel.add(buttonBusquedaBinaria);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
@@ -111,9 +111,10 @@ public class Main extends JFrame {
         buttonsPanel.add(buttonFechas);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
-
-
-
+        // Crear un JScrollPane y agregar el panel de botones a él
+        JScrollPane scrollPane = new JScrollPane(buttonsPanel);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 
         gbc.gridx = 0;
         gbc.gridy = 1;
