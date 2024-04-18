@@ -28,12 +28,17 @@ public class GUI_CantidadDígitos extends JFrame {
 
     public class event implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            int num = Integer.parseInt(textField.getText());
-            CantidadDígitos cd = new CantidadDígitos();
-            int cantidad = cd.contarDigitos(num);
-            JOptionPane.showMessageDialog(null, "El número " + num + " tiene " + cantidad + " dígitos.");
+            try {
+                int num = Integer.parseInt(textField.getText());
+                CantidadDígitos cd = new CantidadDígitos();
+                int cantidad = cd.contarDigitos(num);
+                JOptionPane.showMessageDialog(null, "El número " + num + " tiene " + cantidad + " dígitos.");
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Por favor, introduce un número válido.");
+            }
         }
     }
+
 
     public static void main(String[] args) {
         GUI_CantidadDígitos gui = new GUI_CantidadDígitos();
