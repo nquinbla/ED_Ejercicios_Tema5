@@ -21,6 +21,9 @@ public class Main extends JFrame {
         JPanel mainPanel = new JPanel(new BorderLayout());
         this.setContentPane(mainPanel);
 
+        DecoPanel decoPanel = new DecoPanel();
+        this.setContentPane(decoPanel);
+
         // Crear un panel para los botones con FlowLayout
         JPanel buttonPanel = new JPanel(new FlowLayout());
         mainPanel.add(buttonPanel, BorderLayout.CENTER);

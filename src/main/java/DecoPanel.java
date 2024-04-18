@@ -9,10 +9,15 @@ public class DecoPanel extends JPanel {
     public DecoPanel() {
         // Cargar la imagen
         ImageIcon icono1 = new ImageIcon("src/main/resources/logoUAX-removebg-preview.png");
-        // Escalar la imagen
-        int newWidth = icono1.getIconWidth() / 3; // Ajusta estos valores a tu gusto
-        int newHeight = icono1.getIconHeight() / 3; // Ajusta estos valores a tu gusto
-        imagen1= icono1.getImage().getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+        // Comprobar que la imagen se ha cargado correctamente
+        if (icono1.getIconWidth() > 0 && icono1.getIconHeight() > 0) {
+            // Escalar la imagen
+            int newWidth = icono1.getIconWidth() / 3; // Ajusta estos valores a tu gusto
+            int newHeight = icono1.getIconHeight() / 3; // Ajusta estos valores a tu gusto
+            imagen1 = icono1.getImage().getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+        } else {
+            System.out.println("Error al cargar la imagen");
+        }
 
     }
     public void paintComponent(Graphics g) {
@@ -56,6 +61,5 @@ public class DecoPanel extends JPanel {
         int x = getWidth() / 2 - imagen1.getWidth(null) / 2; // Centrar la imagen en el eje x
         int y = getHeight() / 2 - imagen1.getHeight(null) / 2; // Centrar la imagen en el eje y
         g2d.drawImage(imagen1, x, y, null);
-
     }
 }
