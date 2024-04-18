@@ -24,7 +24,7 @@ public class Main extends JFrame {
 
         JPanel panel = new DecoPanel();
         this.setContentPane(panel);
-        panel.setLayout(new GridBagLayout());
+        panel.setBackground(Color.decode("#C1D0DB")); // Color azul claro
 
         GridBagConstraints gbc = new GridBagConstraints();
 
