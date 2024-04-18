@@ -76,14 +76,80 @@ public class Main extends JFrame {
 
     public class event implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            // ... el resto de tu código ...
+            if (e.getSource() == buttonSumaNumNaturales) {
+                A_SumaNumNaturales.GUI_SumaNumNaturales gui = new A_SumaNumNaturales.GUI_SumaNumNaturales();
+                gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                gui.setVisible(true);
+                gui.pack();
+                gui.setTitle("Suma de números naturales");
+            } else if (e.getSource() == buttonListaNumDosVal) {
+                B_ListaNumDosVal.GUI_ListaNumDosVal gui = new B_ListaNumDosVal.GUI_ListaNumDosVal();
+                gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                gui.setVisible(true);
+                gui.pack();
+                gui.setTitle("Lista de números entre dos valores");
+            } else if (e.getSource() == buttonCantidadDigitos) {
+                C_CantidadDígitos.GUI_CantidadDígitos gui = new C_CantidadDígitos.GUI_CantidadDígitos();
+                gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                gui.setVisible(true);
+                gui.pack();
+                gui.setTitle("Cantidad de dígitos");
+            } else if (e.getSource() == buttonCalculoxy) {
+                D_Cálculoxy.GUI_Cálculoxy gui = new D_Cálculoxy.GUI_Cálculoxy();
+                gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                gui.setVisible(true);
+                gui.pack();
+                gui.setTitle("Cálculo de x^y");
+            } else if (e.getSource() == buttonCadDigHex) {
+                F_CadDigHex.GUI_CadDigHex gui = new F_CadDigHex.GUI_CadDigHex();
+                gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                gui.setVisible(true);
+                gui.pack();
+                gui.setTitle("Conversión de hexadecimal a decimal");
+            } else if (e.getSource() == buttonValMaxVector) {
+                E_ValMáxVector.GUI_ValMáxVector gui = new E_ValMáxVector.GUI_ValMáxVector();
+                gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                gui.setVisible(true);
+                gui.pack();
+                gui.setTitle("Cálculo de x*y");
+            } else if (e.getSource() == buttonBasesADN) {
+                H_BasesADN.GUI_BasesADN gui = new H_BasesADN.GUI_BasesADN();
+                gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                gui.setVisible(true);
+                gui.pack();
+                gui.setTitle("Generación y conteo de genes en ADN");
+            } else if (e.getSource() == buttonOrdenarAlfabeticamente) {
+                I_OrdenarAlfabeticamente.GUI_OrdenarAlfabeticamente gui = new I_OrdenarAlfabeticamente.GUI_OrdenarAlfabeticamente();
+                gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                gui.setVisible(true);
+                gui.pack();
+                gui.setTitle("Ordenar archivo alfabéticamente");
+            } else if (e.getSource() == buttonBusquedaPalabra) {
+                J_BúsquedaPalabra.GUI_BúsquedaPalabra gui = new J_BúsquedaPalabra.GUI_BúsquedaPalabra();
+                gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                gui.setVisible(true);
+                gui.pack();
+                gui.setTitle("Búsqueda de palabra en archivo");
+            } else if (e.getSource() == buttonBusquedaBinaria) {
+                K_BúsquedaBinaria.GUI_BúsquedaBinaria gui = new K_BúsquedaBinaria.GUI_BúsquedaBinaria();
+                gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                gui.setVisible(true);
+                gui.pack();
+                gui.setTitle("Búsqueda binaria en archivo");
+            } else if (e.getSource() == buttonFechas) {
+                L_Fechas.GUI_Fechas gui = new L_Fechas.GUI_Fechas();
+                gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                gui.setVisible(true);
+                gui.pack();
+                gui.setTitle("Gestión de fechas");
+            }
         }
     }
 
-    public static void main(String[] args) {
-        prueba1 gui = new prueba1();
-        gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        gui.setVisible(true);
-        gui.setTitle("Main");
+        public static void main(String[] args) {
+            prueba1 gui = new prueba1();
+            gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            gui.setVisible(true);
+            gui.setTitle("Main");
+        }
     }
-}
