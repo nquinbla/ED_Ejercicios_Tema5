@@ -19,7 +19,7 @@ public class Main extends JFrame {
     public Main() {
         // Configurar el marco principal
         setTitle("Ejericios Unidad 5");
-        setSize(1000, 600);
+        setSize(1000, 760);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         JPanel panel = new DecoPanel();
@@ -35,20 +35,21 @@ public class Main extends JFrame {
 
         // Crear los títulos y agregarlos al panel de títulos
         JLabel title = new JLabel("<html><font color='grey'>U</font><font color='grey'>A</font><font color='blue'>X</font></html>");
-        title.setFont(new Font("Arial", Font.BOLD, 95));
+        title.setFont(new Font("Arial", Font.BOLD, 105));
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
         titlesPanel.add(title);
 
         JLabel subtitle1 = new JLabel("Ejercicios de la Unidad 5");
-        subtitle1.setFont(new Font("Arial", Font.BOLD, 44));
+        subtitle1.setFont(new Font("Arial", Font.BOLD, 28));
         subtitle1.setAlignmentX(Component.CENTER_ALIGNMENT);
         subtitle1.setPreferredSize(new Dimension(1000, subtitle1.getPreferredSize().height));
         titlesPanel.add(subtitle1);
 
         JLabel subtitle2 = new JLabel("Algoritmia básica: ordenación y búsqueda");
-        subtitle2.setFont(new Font("Arial", Font.BOLD, 44));
+        subtitle2.setFont(new Font("Arial", Font.BOLD, 34));
         subtitle2.setAlignmentX(Component.CENTER_ALIGNMENT);
-        subtitle2.setPreferredSize(new Dimension(1000, subtitle2.getPreferredSize().height + 10)); // Aumentar la altura preferida
+// Aumentar la altura preferida
+        subtitle2.setPreferredSize(new Dimension(1000, subtitle2.getPreferredSize().height + 10));
         titlesPanel.add(subtitle2);
 
         gbc.gridx = 0;
