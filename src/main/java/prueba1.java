@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Main extends JFrame {
+public class prueba1 extends JFrame {
     private JButton buttonSumaNumNaturales;
     private JButton buttonListaNumDosVal;
     private JButton buttonCantidadDigitos;
@@ -16,7 +16,8 @@ public class Main extends JFrame {
     private JButton buttonBusquedaBinaria;
     private JButton buttonFechas;
 
-    public Main() {
+    public prueba1() {
+
         Color colorMarcoPrincipal = new Color(110, 180, 250, 98); // Azul raro
         getContentPane().setBackground(colorMarcoPrincipal); // Establece el color de fondo del marco principal
 
@@ -25,89 +26,63 @@ public class Main extends JFrame {
         setSize(1000, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        JPanel panel = new JPanel(new BorderLayout()); // Cambiar a BorderLayout
+        JPanel panel = new DecoPanel();
         this.setContentPane(panel);
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS)); // Change to BoxLayout
 
-        // Panel de títulos
+        // Create a new panel for the titles with BoxLayout on the Y axis
         JPanel titlesPanel = new JPanel();
         titlesPanel.setLayout(new BoxLayout(titlesPanel, BoxLayout.Y_AXIS));
-        titlesPanel.setOpaque(false); // Hacer que titlesPanel sea transparente
+        titlesPanel.setOpaque(false); // Make titlesPanel transparent
 
-        // Crear los títulos y agregarlos al panel de títulos
+        // Create the titles and add them to the titles panel
         JLabel title = new JLabel("Ejercicios Unidad 5");
         title.setFont(new Font("Arial", Font.BOLD, 24));
-        title.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el título
+        title.setAlignmentX(Component.CENTER_ALIGNMENT); // Center the title
         titlesPanel.add(title);
 
         JLabel subtitle = new JLabel("Algoritmia básica: ordenación y búsqueda");
         subtitle.setFont(new Font("Arial", Font.PLAIN, 18));
-        subtitle.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el subtítulo
+        subtitle.setAlignmentX(Component.CENTER_ALIGNMENT); // Center the subtitle
         titlesPanel.add(subtitle);
 
-        // Panel de botones
-        JPanel buttonsPanel = new JPanel();
-        buttonsPanel.setLayout(new BoxLayout(buttonsPanel, BoxLayout.Y_AXIS));
-        buttonsPanel.setOpaque(false); // Hacer que buttonsPanel sea transparente
+        // Add the titles panel to the main panel
+        panel.add(Box.createVerticalGlue()); // Add flexible space before the titles panel
+        panel.add(titlesPanel);
+        panel.add(Box.createVerticalGlue()); // Add flexible space after the titles panel
 
-        // Crear los botones y agregarlos al panel de botones
         buttonSumaNumNaturales = new JButton("Suma de números naturales");
-        buttonSumaNumNaturales.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el botón
-        buttonsPanel.add(buttonSumaNumNaturales);
-        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Espacio entre botones
+        add(buttonSumaNumNaturales);
 
         buttonListaNumDosVal = new JButton("Lista de números entre dos valores");
-        buttonListaNumDosVal.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el botón
-        buttonsPanel.add(buttonListaNumDosVal);
-        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Espacio entre botones
+        add(buttonListaNumDosVal);
 
         buttonCantidadDigitos = new JButton("Cantidad de dígitos");
-        buttonCantidadDigitos.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el botón
-        buttonsPanel.add(buttonCantidadDigitos);
-        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Espacio entre botones
+        add(buttonCantidadDigitos);
 
         buttonCalculoxy = new JButton("Cálculo de x^y");
-        buttonCalculoxy.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el botón
-        buttonsPanel.add(buttonCalculoxy);
-        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Espacio entre botones
+        add(buttonCalculoxy);
 
         buttonCadDigHex = new JButton("Conversión de hexadecimal a decimal");
-        buttonCadDigHex.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el botón
-        buttonsPanel.add(buttonCadDigHex);
-        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Espacio entre botones
+        add(buttonCadDigHex);
 
         buttonValMaxVector = new JButton("Cálculo de x*y");
-        buttonValMaxVector.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el botón
-        buttonsPanel.add(buttonValMaxVector);
-        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Espacio entre botones
+        add(buttonValMaxVector);
 
         buttonBasesADN = new JButton("Generación y conteo de genes en ADN");
-        buttonBasesADN.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el botón
-        buttonsPanel.add(buttonBasesADN);
-        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Espacio entre botones
+        add(buttonBasesADN);
 
         buttonOrdenarAlfabeticamente = new JButton("Ordenar archivo alfabéticamente");
-        buttonOrdenarAlfabeticamente.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el botón
-        buttonsPanel.add(buttonOrdenarAlfabeticamente);
-        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Espacio entre botones
+        add(buttonOrdenarAlfabeticamente);
 
         buttonBusquedaPalabra = new JButton("Búsqueda de palabra en archivo");
-        buttonBusquedaPalabra.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el botón
-        buttonsPanel.add(buttonBusquedaPalabra);
-        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Espacio entre botones
+        add(buttonBusquedaPalabra);
 
         buttonBusquedaBinaria = new JButton("Búsqueda binaria en archivo");
-        buttonBusquedaBinaria.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el botón
-        buttonsPanel.add(buttonBusquedaBinaria);
-        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Espacio entre botones
+        add(buttonBusquedaBinaria);
 
         buttonFechas = new JButton("Gestión de fechas");
-        buttonFechas.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el botón
-        buttonsPanel.add(buttonFechas);
-        buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Espacio entre botones
-
-        // Agregar los paneles al panel principal
-        panel.add(titlesPanel, BorderLayout.CENTER);
-        panel.add(buttonsPanel, BorderLayout.EAST);
+        add(buttonFechas);
 
         event e = new event();
         buttonSumaNumNaturales.addActionListener(e);
@@ -194,7 +169,6 @@ public class Main extends JFrame {
             }
         }
     }
-
     public static void main(String[] args) {
         Main gui = new Main();
         gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
