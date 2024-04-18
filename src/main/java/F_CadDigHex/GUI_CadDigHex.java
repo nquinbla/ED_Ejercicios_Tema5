@@ -25,10 +25,13 @@ public class GUI_CadDigHex extends JFrame {
 
     public class event implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String hex = textFieldHex.getText();
-            CadDigHex hexToDec = new CadDigHex();
-            int resultado = hexToDec.CadDigHex(hex, hex.length());
-            JOptionPane.showMessageDialog(null, "El valor decimal de " + hex + " es " + resultado + ".");
+            try {
+                String hex = textFieldHex.getText();
+                int decimal = Integer.parseInt(hex, 16);
+                JOptionPane.showMessageDialog(null, "El valor decimal de " + hex + " es " + decimal + ".");
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Por favor, introduce un número hexadecimal válido.");
+            }
         }
     }
 
