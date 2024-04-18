@@ -17,6 +17,15 @@ public class Main extends JFrame {
     private JButton buttonFechas;
 
     public Main() {
+
+        Color colorMarcoPrincipal = new Color(110, 180, 250, 98); // Azul raro
+        getContentPane().setBackground(colorMarcoPrincipal); // Establece el color de fondo del marco principal
+
+        // Configurar el marco principal
+        setTitle("Ejericios Unidad 5");
+        setSize(1000, 600);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
         // Crear un panel principal con BorderLayout
         JPanel mainPanel = new JPanel(new BorderLayout());
         this.setContentPane(mainPanel);
@@ -46,9 +55,6 @@ public class Main extends JFrame {
         subtitle.setFont(new Font("Arial", Font.PLAIN, 18));
         titlePanel.add(subtitle);
         setLayout(new FlowLayout());
-
-        // Ajustar el tamaño de la ventana
-        this.setSize(1000, 600);
 
         buttonSumaNumNaturales = new JButton("Suma de números naturales");
         add(buttonSumaNumNaturales);
