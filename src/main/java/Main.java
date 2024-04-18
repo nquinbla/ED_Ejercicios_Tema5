@@ -34,8 +34,8 @@ public class Main extends JFrame {
         titlesPanel.setOpaque(false);
 
         // Crear los títulos y agregarlos al panel de títulos
-        JLabel title = new JLabel("<html><font color='grey'>Ejercicios.</font><font color='grey'>de la.</font><font color='grey'>Unidad.</font><font color='blue'>5.</font></html>");
-        title.setFont(new Font("Arial", Font.BOLD, 124));
+        JLabel title = new JLabel("<html><font color='grey'>Ejercicios </font><font color='grey'>de la </font><font color='grey'>unidad </font><font color='blue'>5</font></html>");
+        title.setFont(new Font("Arial", Font.BOLD, 95));
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
         titlesPanel.add(title);
 
@@ -209,7 +209,7 @@ public class Main extends JFrame {
     }
 
         public static void main(String[] args) {
-            prueba1 gui = new prueba1();
+            Main gui = new Main();
             gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             gui.setVisible(true);
             gui.setTitle("Main");

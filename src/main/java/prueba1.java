@@ -30,12 +30,10 @@ public class prueba1 extends JFrame {
         this.setContentPane(panel);
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS)); // Change to BoxLayout
 
-        // Create a new panel for the titles with BoxLayout on the Y axis
         JPanel titlesPanel = new JPanel();
         titlesPanel.setLayout(new BoxLayout(titlesPanel, BoxLayout.Y_AXIS));
         titlesPanel.setOpaque(false); // Make titlesPanel transparent
 
-        // Create the titles and add them to the titles panel
         JLabel title = new JLabel("Ejercicios Unidad 5");
         title.setFont(new Font("Arial", Font.BOLD, 24));
         title.setAlignmentX(Component.CENTER_ALIGNMENT); // Center the title
@@ -170,7 +168,7 @@ public class prueba1 extends JFrame {
         }
     }
     public static void main(String[] args) {
-        Main gui = new Main();
+        prueba1 gui = new prueba1();
         gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         gui.setVisible(true);
         gui.setTitle("Main");
