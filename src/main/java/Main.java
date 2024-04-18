@@ -37,7 +37,9 @@ public class Main extends JFrame {
         JLabel title = new JLabel("<html><font color='grey'>U</font><font color='grey'>A</font><font color='blue'>X</font></html>");
         title.setFont(new Font("Arial", Font.BOLD, 105));
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
+        titlesPanel.add(Box.createHorizontalGlue()); // Agregar espacio flexible antes del título
         titlesPanel.add(title);
+        titlesPanel.add(Box.createHorizontalGlue()); // Agregar espacio flexible después del título
 
         JLabel subtitle1 = new JLabel("Ejercicios de la Unidad 5");
         subtitle1.setFont(new Font("Arial", Font.BOLD, 28));
