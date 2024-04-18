@@ -42,11 +42,13 @@ public class Main extends JFrame {
         JLabel subtitle1 = new JLabel("Ejercicios de la Unidad 5");
         subtitle1.setFont(new Font("Arial", Font.BOLD, 44));
         subtitle1.setAlignmentX(Component.CENTER_ALIGNMENT);
+        subtitle1.setPreferredSize(new Dimension(1000, subtitle1.getPreferredSize().height));
         titlesPanel.add(subtitle1);
 
         JLabel subtitle2 = new JLabel("Algoritmia básica: ordenación y búsqueda");
         subtitle2.setFont(new Font("Arial", Font.BOLD, 44));
         subtitle2.setAlignmentX(Component.CENTER_ALIGNMENT);
+        subtitle2.setPreferredSize(new Dimension(1000, subtitle2.getPreferredSize().height + 10)); // Aumentar la altura preferida
         titlesPanel.add(subtitle2);
 
         gbc.gridx = 0;
@@ -148,13 +150,13 @@ public class Main extends JFrame {
                 gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 gui.setVisible(true);
                 gui.pack();
-                gui.setTitle("Suma de números naturales");
+                gui.setTitle("Suma de naturales");
             } else if (e.getSource() == buttonListaNumDosVal) {
                 B_ListaNumDosVal.GUI_ListaNumDosVal gui = new B_ListaNumDosVal.GUI_ListaNumDosVal();
                 gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 gui.setVisible(true);
                 gui.pack();
-                gui.setTitle("Lista de números entre dos valores");
+                gui.setTitle("Lista de números");
             } else if (e.getSource() == buttonCantidadDigitos) {
                 C_CantidadDígitos.GUI_CantidadDígitos gui = new C_CantidadDígitos.GUI_CantidadDígitos();
                 gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -172,7 +174,7 @@ public class Main extends JFrame {
                 gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 gui.setVisible(true);
                 gui.pack();
-                gui.setTitle("Conversión de hexadecimal a decimal");
+                gui.setTitle("Hexl a decimal");
             } else if (e.getSource() == buttonValMaxVector) {
                 E_ValMáxVector.GUI_ValMáxVector gui = new E_ValMáxVector.GUI_ValMáxVector();
                 gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -184,25 +186,25 @@ public class Main extends JFrame {
                 gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 gui.setVisible(true);
                 gui.pack();
-                gui.setTitle("Generación y conteo de genes en ADN");
+                gui.setTitle("Genes en ADN");
             } else if (e.getSource() == buttonOrdenarAlfabeticamente) {
                 I_OrdenarAlfabeticamente.GUI_OrdenarAlfabeticamente gui = new I_OrdenarAlfabeticamente.GUI_OrdenarAlfabeticamente();
                 gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 gui.setVisible(true);
                 gui.pack();
-                gui.setTitle("Ordenar archivo alfabéticamente");
+                gui.setTitle("Ordenar alfabéticamente");
             } else if (e.getSource() == buttonBusquedaPalabra) {
                 J_BúsquedaPalabra.GUI_BúsquedaPalabra gui = new J_BúsquedaPalabra.GUI_BúsquedaPalabra();
                 gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 gui.setVisible(true);
                 gui.pack();
-                gui.setTitle("Búsqueda de palabra en archivo");
+                gui.setTitle("Búsqueda de palabras");
             } else if (e.getSource() == buttonBusquedaBinaria) {
                 K_BúsquedaBinaria.GUI_BúsquedaBinaria gui = new K_BúsquedaBinaria.GUI_BúsquedaBinaria();
                 gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 gui.setVisible(true);
                 gui.pack();
-                gui.setTitle("Búsqueda binaria en archivo");
+                gui.setTitle("Búsqueda binaria");
             } else if (e.getSource() == buttonFechas) {
                 L_Fechas.GUI_Fechas gui = new L_Fechas.GUI_Fechas();
                 gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
