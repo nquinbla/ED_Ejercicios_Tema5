@@ -34,15 +34,20 @@ public class Main extends JFrame {
         titlesPanel.setOpaque(false);
 
         // Crear los títulos y agregarlos al panel de títulos
-        JLabel title = new JLabel("<html><font color='grey'>Ejercicios </font><font color='grey'>de la </font><font color='grey'>unidad </font><font color='blue'>5</font></html>");
+        JLabel title = new JLabel("<html><font color='grey'>U</font><font color='grey'>A</font><font color='blue'>X</font></html>");
         title.setFont(new Font("Arial", Font.BOLD, 95));
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
         titlesPanel.add(title);
 
-        JLabel subtitle = new JLabel("Algoritmia básica: ordenación y búsqueda");
-        subtitle.setFont(new Font("Arial", Font.ITALIC, 44));
-        subtitle.setAlignmentX(Component.CENTER_ALIGNMENT);
-        titlesPanel.add(subtitle);
+        JLabel subtitle1 = new JLabel("Ejercicios de la Unidad 5");
+        subtitle1.setFont(new Font("Arial", Font.BOLD, 44));
+        subtitle1.setAlignmentX(Component.CENTER_ALIGNMENT);
+        titlesPanel.add(subtitle1);
+
+        JLabel subtitle2 = new JLabel("Algoritmia básica: ordenación y búsqueda");
+        subtitle2.setFont(new Font("Arial", Font.BOLD, 44));
+        subtitle2.setAlignmentX(Component.CENTER_ALIGNMENT);
+        titlesPanel.add(subtitle2);
 
         gbc.gridx = 0;
         gbc.gridy = 0;
