@@ -20,7 +20,7 @@ public class FechaContainer {
         return this.fechas;
     }
 
-    private class Fecha implements Comparable<Fecha> {
+    public static class Fecha implements Comparable<Fecha> {
         private int dia;
         private int mes;
         private int año;
