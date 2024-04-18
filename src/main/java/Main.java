@@ -25,8 +25,10 @@ public class Main extends JFrame {
         setSize(1000, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        JPanel panel = new JPanel(new BorderLayout()); // Cambiar a BorderLayout
+        JPanel panel = new JPanel(new GridBagLayout()); // Cambiar a GridBagLayout
         this.setContentPane(panel);
+
+        GridBagConstraints gbc = new GridBagConstraints();
 
         // Panel de títulos
         JPanel titlesPanel = new JPanel();
@@ -43,6 +45,12 @@ public class Main extends JFrame {
         subtitle.setFont(new Font("Arial", Font.PLAIN, 18));
         subtitle.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el subtítulo
         titlesPanel.add(subtitle);
+
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 2;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        panel.add(titlesPanel, gbc);
 
         // Panel de botones
         JPanel buttonsPanel = new JPanel();
@@ -105,9 +113,11 @@ public class Main extends JFrame {
         buttonsPanel.add(buttonFechas);
         buttonsPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Espacio entre botones
 
-        // Agregar los paneles al panel principal
-        panel.add(titlesPanel, BorderLayout.CENTER);
-        panel.add(buttonsPanel, BorderLayout.EAST);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridwidth = 2;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        panel.add(buttonsPanel, gbc);
 
         event e = new event();
         buttonSumaNumNaturales.addActionListener(e);

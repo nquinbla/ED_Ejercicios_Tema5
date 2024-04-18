@@ -176,3 +176,6 @@ public class prueba1 extends JFrame {
         gui.setTitle("Main");
     }
 }
+// antes de event e =new event despues de button
+//       panel.add(titlesPanel, BorderLayout.CENTER);
+//        panel.add(buttonsPanel, BorderLayout.EAST);
