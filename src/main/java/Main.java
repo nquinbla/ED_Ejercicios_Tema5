@@ -28,35 +28,23 @@ public class Main extends JFrame {
 
         JPanel panel = new DecoPanel();
         this.setContentPane(panel);
-        panel.setLayout(new GridBagLayout()); // Cambiar a GridBagLayout
-        panel.setBackground(new Color(255, 255, 255, 200)); // Blanco semi-transparente
-        panel.setOpaque(false); // Hacer que panelPrincipal sea
-        panel.setPreferredSize(new Dimension(getWidth(), getHeight()));
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS)); // Cambiar a BoxLayout
 
-        // Configurar restricciones para el diseño de cuadrícula
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.fill = GridBagConstraints.NONE;
-        gbc.weightx = 1.0; // Dar a todos los componentes el mismo espacio horizontal
-        gbc.weighty = 1.0; // Dar a todos los componentes el mismo espacio vertical
-        gbc.insets = new Insets(5, 5, 5, 5); // Margen entre componentes
-        gbc.anchor = GridBagConstraints.CENTER; // Centrar los componentes en su celda
+        JPanel titlePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        titlePanel.setOpaque(false); // Hacer que titlePanel sea transparente
 
         // Crear los títulos y agregarlos al panel de títulos
         JLabel title = new JLabel("Ejercicios Unidad 5");
         title.setFont(new Font("Arial", Font.BOLD, 24));
-        title.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el título
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        panel.add(title, gbc); // Agregar al panel con las restricciones de GridBagLayout
+        titlePanel.add(title);
 
         JLabel subtitle = new JLabel("Algoritmia básica: ordenación y búsqueda");
         subtitle.setFont(new Font("Arial", Font.PLAIN, 18));
-        title.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrar el título
-        gbc.gridx = 1;
-        gbc.gridy = 0;
-        panel.add(title, gbc); // Agregar al panel con las restricciones de GridBagLayout
-
-        setLayout(new FlowLayout());
+        titlePanel.add(subtitle);
+        // Agregar el panel de títulos al panel principal
+        panel.add(Box.createVerticalGlue()); // Agregar espacio flexible antes del panel de títulos
+        panel.add(titlePanel);
+        panel.add(Box.createVerticalGlue());
 
         buttonSumaNumNaturales = new JButton("Suma de números naturales");
         add(buttonSumaNumNaturales);
